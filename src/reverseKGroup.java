@@ -4,6 +4,10 @@
 
 // You may not alter the values in the list's nodes, only nodes themselves may be changed.
 
+import java.util.ArrayList;
+
+import component.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
