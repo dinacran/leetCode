@@ -1,8 +1,8 @@
-// ContainerWithMostWaterV2blems/container-with-most-water/description/
+// https://leetcode.com/problems/container-with-most-water/description/
 
 void main() {
 
-    System.out.println(maxArea(new int[] {1,2,4,3}));
+    System.out.println(maxArea(new int[] { 1, 2, 4, 3 }));
 
 }
 
