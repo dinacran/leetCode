@@ -19,7 +19,13 @@ public List<List<Integer>> threeSum(Integer[] nums) {
 
     ArrayUtils.printArray(nums);
 
-    Set<List<Integer>> set = new HashSet<>();
+    Set<Integer> arraySet = new HashSet<>();
+
+    for (Integer i : nums) {
+        arraySet.add(i);
+    }
+
+    Set<List<Integer>> resultSet = new HashSet<>();
 
     for (int i = 0; i < nums.length - 2; i++) {
         for (int j = nums.length - 1; j > i + 1; j--) {
@@ -29,11 +35,11 @@ public List<List<Integer>> threeSum(Integer[] nums) {
                 if (nums[k] == x) {
                     List<Integer> temp = Arrays.asList(nums[i], nums[j], nums[k]);
                     temp.sort((a, b) -> Integer.compare(b, a));
-                    set.add(temp);
+                    resultSet.add(temp);
                 }
             }
         }
     }
 
-    return new ArrayList<>(set);
+    return new ArrayList<>(resultSet);
 }
