@@ -26,10 +26,10 @@ public int maxFreeTime(int eventTime, int[] startTime, int[] endTime) {
         gaps.add(i);
     }
 
-
     for (int i = 1; i < endTime.length; i++) {
-        for(int j = startTime[i] - endTime[i - 1]; j > 0; j--) {
-            if(gaps.contains(j)) break;
+        for (int j = startTime[i] - endTime[i - 1]; j > 0; j--) {
+            if (gaps.contains(j))
+                break;
             gaps.add(j);
         }
 
@@ -44,13 +44,28 @@ public int maxFreeTime(int eventTime, int[] startTime, int[] endTime) {
 
                 maxFreeTime = Math.max(maxFreeTime, startTime[i + 1] - endTime[i - 1]);
 
-            } else if(i == 0) {
+            } else if (i == 0) {
 
                 maxFreeTime = Math.max(maxFreeTime, startTime[i + 1]);
 
-            } else if(i == endTime.length - 1) {
+            } else if (i == endTime.length - 1) {
 
                 maxFreeTime = Math.max(maxFreeTime, eventTime - endTime[i - 1]);
+            }
+
+        } else {
+            if (i > 0 && i < endTime.length - 1) {
+
+                maxFreeTime = Math.max(maxFreeTime, (endTime[i - 1] + startTime[i + 1]) - eventSpan);
+
+            } else if (i == 0) {
+
+                maxFreeTime = Math.max(maxFreeTime, startTime[i + 1] - eventSpan);
+
+            } else if (i == endTime.length - 1) {
+                
+                maxFreeTime = Math.max(maxFreeTime, eventTime - endTime[i - 1] - eventSpan);
+
             }
 
         }
