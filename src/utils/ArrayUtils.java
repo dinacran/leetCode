@@ -33,6 +33,16 @@ public class ArrayUtils {
         System.out.println();
     }
 
+public static void print2DCharArray(char[][] arr) {
+    for (char[] row : arr) {
+        for (char val : row) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+    }
+}
+
+
     
     public static void printBooleanArray(boolean[] arr) {
         for (boolean val : arr) {
